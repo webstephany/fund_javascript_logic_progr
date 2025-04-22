@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia_de_Deploy</title>
+
+    <style>
+        :root {
+            --clarencio: #fff;
+            --sumo: #000;
+            --tdb: #7d1ad4;
+            --bdb: #6e17b9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: var(--clarencio);
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            background-color: var(--sumo);
+            color: var(--clarencio);
+            padding: 2rem;
+            border-radius: 0.9rem;
+
+        }
+
+
+        button {
+            background-color: var(--tdb);
+            padding: 0.4rem;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+
+        button:hover {
+
+            background-color: var(--bdb);
+            transition: 0.8s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div>
+        <h1>Dia de Deploy</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio animi eveniet fuga minima delectus nam in,
+            odit dolore maxime, magni doloribus ex tenetur error soluta cum asperiores. Id, beatae iste!</p>
+
+        <button id="dark-mode"></button>
+    </div>
+
+</body>
+
+<script>
+    const btnDarkMode = document.getElementByid('btn-dark-mode')
+
+    const themeSystem = localStorage.getItem('themeSystem') || 'light'
+
+
+    btnDarkMode.addEventListener('click', () => {
+        let oldTheme = localStorage.getItem('themeSystem') || 'light'
+        let newTheme = oldTheme == "light" ? "dark" : "light"
+        localStorage.setitem('themeSystem', newTheme)
+        defineCurrentTheme(newTheme)
+    })
+
+function defineCurrentTheme(theme) {
+    const darkSvg =""
+    const lightSVG =""
+    document.documentElement.seTAttribute("data-theme",theme)
+    if (theme == "light") {
+        btnDarkMode.innerHTMl = darkSvg
+        return
+    }
+    btnDarkMode.innerHTMl = lightSVG
+}
+defineCurrentTheme(themeSystem)
+
+</script>
+
+</html>

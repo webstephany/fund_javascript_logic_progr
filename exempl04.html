@@ -3,76 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo-04</title>
-</head>
+    <title>seletor de cor</title>
+
+
 <style>
-
-*{
-    margin:0 ;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-body{
-    background: #2bb5bfd6;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition:0.3s cubic cubic-bezier(0.215,0.61,0.355,1) ;
-
+body {
+background: #dc143c;
+min-height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 h2{
-    color: #4917c9;
+    color: #fff;
     font-weight: 200;
 }
 
 button{
-    padding: 15px;
+    padding: 18px;
     background: transparent;
-    border: 2px solid rgb(6, 6, 6);
-    color:#000000;
-    transition: 0.8s cubic-bezier(0.175,0.885,0.32,1.275);
-
+    border: 5px solid white;
+    color: #fff;
+    transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-button :hover{
-    background: #d9d50f;
-    color:#140442;
+button:hover{
+    background: #fff;
+    color: #000;
     cursor: pointer;
-
 }
 
 button:active{
     padding: 5px;
 }
-
 </style>
+</head> 
+
 <body>
-    <button id="btn">Qual a sua Cor ?</button>
-    <h2 id="hexCode">#8a2be2</h2>
-    <script>
-const btn = document.getElementById("btn");
-let hex = document. getElementById("hexCode");
+    <button id="btn">qual é sua cor?</button>
+    <h2 id="hexCode">#dc143c</h2>
+</body>
 
-function trocarCor(){
+<script>
+    const btn = document.getElementById
+    ("btn");
 
+    let hex = document.getElementById
+    ("hexCode");
+
+    function mudarCor() {
     let letters = "0123456789ABCDEF";
+    
+    let color = "#";
 
-    let color  = "#";
-
-    for (let i = 0; i < 6; i++){
-        color += letters[Math.floor(Math.random() * 16)];
+    for (let i = 0; i<6; i++) {
+        color += letters[Math.floor(Math.random() * 16)]; 
     }
     return color;
-}
+    }
 
-btn.addEventListener("click", () => {
-    document.body.style.backgroundColor = trocarCor()
-    hex.innerHTML = trocarCor();
-})
-    </script>
-</body>
+    btn.addEventListener("click", () => {
+        document.body.style.backgroundColor = mudarCor();
+        hex.innerHTML = mudarCor();
+    })
+    
+</script>
 </html>

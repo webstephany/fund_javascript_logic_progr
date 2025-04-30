@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor_25</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root{
+            --colorblack:#97a72cfa;
+            --colorwhite:#ec062d;
+            --colorblack:#e9970a;
+            --colorwhite:#fff;
+
+        }
+
+        *{
+           margin: 0;
+           padding: 0;
+           
+        }
+        body {
+            height: 100vh;
+            background: #000;
+            background-image:url('../assets/Dia-Nacional-do-Cerrado.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: space;
+            display: flex;
+            flex-direction: colum;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body ::before{
+            height: 100vh;
+            background: #000;
+            background-image:url('../assets/IMG_8392_thumb[2].jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: space;
+            display: flex;
+            flex-direction: colum;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color:#fff;
+            font-size: 4rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        p {
+            color: #fff;
+            max-width: 700px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            letter-spacing: 2px;
+            line-height: 22px;
+            margin-bottom: 40px;
+
+        }
+
+        button {
+            padding: 0;
+            margin: 0;
+            border: transparent;
+            background: transparent;
+            color: #fff;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+
+        .cursor {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: yellow;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="container">
+        <h1>Teste seu Mouse</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolor nesciunt molestiae officia dignissimos
+            temporibus commodi voluptatum ipsum? Porro, neque dicta mollitia aliquid pariatur cumque odit dolore alias
+            provident hic!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquid laudantium at iure error aperiam
+            eaque porro vitae reiciendis, cupiditate molestiae libero reprehenderit corrupti et amet quasi similique
+            neque tempora!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odit rerum necessitatibus consequatur sint
+            illo, quisquam dignissimos sed modi reprehenderit ipsum voluptatum reiciendis explicabo omnis distinctio
+            fugiat, quae tenetur molestias?
+
+        </p>
+        <button>Saiba_Mais</button>
+    </div>
+
+</body>
+<script>
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", function (event) {
+        moveCursor(event.pageX, event.pageY);
+    });
+
+    const moveCursor = function (pageX, pageY) {
+        cursor.style.left = pageX + "px";
+        cursor.style.top = pageY + "px";
+    };
+</script>
+
+</html>

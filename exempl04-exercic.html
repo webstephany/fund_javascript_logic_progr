@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04</title>
+</head>
+<body>
+    <header>
+        <h1>Lâmpada</h1>
+    </header>
+<section>
+    <div>
+        <img src="imagem?"alt="Lâmpada off" id="lamp">
+    </div>
+
+    <div>
+        <button id="turnOn">Se_liga</button>
+        <button id="turnOn">Deitou_sem_Sono</button>
+    </div>
+</section>
+</body>
+
+<script>
+
+const lamp = document.getElementById ("lamp");
+const turnOn = document.getElementById ("turnOn");
+const turnOnff = document.getElementById ("turnOff");
+
+function lampOn (){
+    if (!isLamBrokem ()) {
+        lam.src= "./img/lamp_on.jpg";
+    }
+}
+
+function lampOff () {
+    if(!isLamBrokem ()){
+        lamp.src = "./img/lamp_off.jpg"
+    }
+}
+
+function isLamBrokem (){
+    return lamp.src.indexOf ("quebrada") > -1 
+}
+
+</script>
+</html>
